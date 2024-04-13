@@ -1,9 +1,3 @@
-/**
- * Operacao.java
- *
- * @author João Eduardo Montandon
- */
-
 import java.util.Date;
 
 /**
@@ -19,23 +13,45 @@ public class Operacao {
 
     /* Valor da operação */
     public double valor;
+    public static int totalOperacoes=0;
+
+
 
     /**
      * Construtor. Inicializa uma nova instância da classe Operacao onde a data da operação é exatamente a data
      * da criação da classe.
-     *
      * Exemplos de uso:
-     *
      * > Operacao op1 = new Operacao('d', 2500); // Operação de depósito de 2500 reais
      * > Operacao op2 = new Operacao('s', 1000); // Operação de saque de 1000 reais
      *
-     * @param tipo Tipo da operação, podendo ser 'd' ou 's'
-     * @param valor Valor da operação
+     //* @param tipo Tipo da operação, podendo ser 'd' ou 's'
+     // * @param valor Valor da operação
      */
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
     public Operacao(char tipo, double valor) {
         this.tipo = tipo;
         this.valor = valor;
         data = new Date();
+        totalOperacoes ++;
+
     }
+    public char getTipo(){
+        return this.tipo;
+    }
+    public Date getData(){
+        return this.data;
+    }
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
+    }
+
+
 
 }
